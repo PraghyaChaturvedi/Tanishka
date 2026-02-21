@@ -10,7 +10,7 @@ export function Skills() {
     "Adobe Dimension",
   ]
 
-  const analogSkills = ["Research", "Visualization", "Color Theory", "Communication", "Creativity"]
+  const analogSkills = ["Research", "Visualization", "Color Theory", "Communication", "Creativity", "Leadership", "Management"]
 
   return (
     <section className="py-24 bg-muted">

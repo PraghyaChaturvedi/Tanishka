@@ -2,16 +2,24 @@
 import { PortfolioCategory } from "./portfolio-category"
 
 const portfolioCategories = [
+
   {
-    title: "Lines That Speak",
-    description: "Sketching, live sketches, still life, perspective, portrait, compositions",
-    images: [
-      "/pencil-sketch-still-life-art.jpg",
-      "/live-portrait-sketch.jpg",
-      "/perspective-architectural-drawing.jpg",
-      "/charcoal-figure-drawing.jpg",
+    title: "Fresh Look, Same Core",
+    description: "Re-branding",
+    images: ["/reBranding/portfolio work-01.jpg",
+"/reBranding/portfolio work-02.jpg",
+"/reBranding/portfolio work-03.jpg",
+"/reBranding/portfolio work-04.jpg",
+"/reBranding/portfolio work-05.jpg",
+"/reBranding/portfolio work-06.jpg",
+"/reBranding/portfolio work-07.jpg",
+"/reBranding/portfolio work-08.jpg",
+"/reBranding/portfolio work-09.jpg",
+"/reBranding/portfolio work-10.jpg",
+"/reBranding/portfolio work-11.jpg",
     ],
   },
+
   {
     title: "Make Them Look",
     description: "Poster designing",
@@ -37,40 +45,66 @@ const portfolioCategories = [
 "/poster/sofa add poster.jpg"
 ],
   },
+
   {
-    title: "Fresh Look, Same Core: ZUDIO",
-    description: "Re-branding",
-    images: ["/zudio-rebranding-design.jpg", "/brand-identity-mockup.jpg", "/rebranding-presentation.jpg"],
+    title: "Visual Stories",
+    description: "Magazine covers, ads, brochures, editorial design",
+    images: ["/magazine-cover-design-editorial.jpg", "/magazine-cover.png", "/brochure-editorial-design.jpg"],
   },
-  {
-    title: "Brand Marks Study",
-    description: "Logo designing and logo book",
-    images: ["/modern-logo-design-branding.jpg", "/brand-identity-stationery.jpg", "/logo-design-collection.jpg"],
-  },
+
   {
     title: "Illustrated Narrative",
     description: "Mythological story book",
+    images: [
+      "/mythological-story-book/taniii story book-01.jpg",
+      "/mythological-story-book/taniii story book-02.jpg",
+      "/mythological-story-book/taniii story book-03.jpg",
+      "/mythological-story-book/taniii story book-04.jpg",
+      "/mythological-story-book/taniii story book-05.jpg",
+      "/mythological-story-book/taniii story book-06.jpg",
+      "/mythological-story-book/taniii story book-07.jpg",
+    ],
+  },
+
+  {
+    title: "Pixels and Imaginations",
+    description: "Digital illustrations",
     images: [
       "/mythological-illustration-storybook.jpg",
       "/illustrated-mythology.jpg",
       "/storybook-illustration-art.jpg",
     ],
   },
+  
   {
-    title: "Visual Stories",
-    description: "Magazine covers, ads, brochures, editorial design",
-    images: ["/magazine-cover-design-editorial.jpg", "/magazine-cover.png", "/brochure-editorial-design.jpg"],
+    title: "Brand Marks Study",
+    description: "Logo designing and logo book",
+    images: ["/modern-logo-design-branding.jpg", "/brand-identity-stationery.jpg", "/logo-design-collection.jpg"],
   },
+
   {
     title: "Type That Talks",
     description: "Typography",
     images: ["/typography-poster.png", "/creative-typography-design.jpg", "/typographic-art.jpg"],
   },
+
+  {
+    title: "Lines That Speak",
+    description: "Sketching, live sketches, still life, perspective, portrait, compositions",
+    images: [
+      "/pencil-sketch-still-life-art.jpg",
+      "/live-portrait-sketch.jpg",
+      "/perspective-architectural-drawing.jpg",
+      "/charcoal-figure-drawing.jpg",
+    ],
+  },
+  
   {
     title: "Visual Rhythm",
     description: "Stop motion",
     images: ["/stop-motion-animation-frame.jpg", "/stop-motion-art-project.jpg", "/animated-stop-motion-scene.jpg"],
   },
+
   {
     title: "Miniature Mastery",
     description: "Pencil Carving Art",

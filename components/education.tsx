@@ -3,12 +3,17 @@ export function Education() {
     <section className="py-24">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-serif font-bold mb-12 text-center">Education</h2>
-        <div className="max-w-3xl mx-auto space-y-8">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="border-l-2 border-accent pl-6 space-y-2">
             <p className="text-sm text-muted-foreground">2023 - Present</p>
             <h3 className="text-2xl font-serif font-semibold">Bachelor of Fine Arts</h3>
             <p className="text-muted-foreground">Veer Narmad South Gujarat University (VNSGU)</p>
             <p className="text-muted-foreground">Currently in 3rd Year</p>
+          </div>
+          <div className="border-l-2 border-accent pl-6 space-y-2">
+            <p className="text-sm text-muted-foreground">2024 - Present</p>
+            <h3 className="text-2xl font-serif font-semibold">Diploma in Graphic Design</h3>
+            <p className="text-muted-foreground">IMAGE Institute, Surat</p>
           </div>
           <div className="border-l-2 border-accent pl-6 space-y-2">
             <p className="text-sm text-muted-foreground">2021 - 2023</p>

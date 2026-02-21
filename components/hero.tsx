@@ -1,5 +1,11 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { Outfit } from "next/font/google"
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+})
 
 export function Hero() {
   return (
@@ -7,17 +13,27 @@ export function Hero() {
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 fade-in-up">
-            <p className="text-muted-foreground text-sm tracking-wide uppercase">Fine Arts & Design</p>
-            <h1 className="text-5xl md:text-7xl font-serif font-bold text-balance leading-tight">Tanishka Agarwal</h1>
+            <p className="text-muted-foreground text-sm tracking-[0.2em] uppercase pl-3">
+              Fine Arts & Design
+            </p>
+
+            <h1
+              className={`${outfit.className} text-5xl md:text-7xl  tracking-tight leading-tight`}
+            >
+              Tanishka Agarwal
+            </h1>
+
             <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
               Fine Arts student specializing in multidisciplinary design, branding, and visual storytelling
             </p>
+
             <div className="flex gap-4 pt-4">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90">
                 <Link href="#portfolio">View Portfolio</Link>
               </Button>
             </div>
           </div>
+
           <div className="relative aspect-[3/4] bg-muted rounded-lg overflow-hidden scale-in">
             <img
               src="/professional-portrait-of-young-female-artist-in-el.jpg"
