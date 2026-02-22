@@ -3,8 +3,8 @@ export function About() {
     <section id="about" className="py-24 bg-muted">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-serif font-bold mb-12 text-center">Journey</h2>
-          <div className="space-y-8 text-lg leading-relaxed text-muted-foreground">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-12 text-center">Journey</h2>
+          <div className="space-y-8 text-sm md:text-lg leading-relaxed text-muted-foreground">
             <p>
               My creative journey began with a foundation in accountancy, but during the COVID-19 period between my 10th
               and 12th grades, I discovered my true passion for art and drawing. This led me to explore pencil lead

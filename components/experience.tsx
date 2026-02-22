@@ -39,18 +39,18 @@ export function Experience() {
   return (
     <section id="experience" className="py-24 bg-muted">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-serif font-bold mb-12 text-center">Experience</h2>
+        <h2 className="text-3xl md:text-4xl font-serif font-bold mb-12 text-center">Experience</h2>
         <div className="max-w-4xl mx-auto space-y-8">
           {experiences.map((exp, index) => (
             <div key={index} className="bg-card p-6 rounded-lg border border-border">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
                 <div>
-                  <h3 className="text-xl font-semibold">{exp.title}</h3>
-                  <p className="text-accent">{exp.type}</p>
+                  <h3 className="text-base md:text-xl font-semibold">{exp.title}</h3>
+                  <p className="text-sm md:text-base text-accent">{exp.type}</p>
                 </div>
-                <p className="text-sm text-muted-foreground whitespace-nowrap">{exp.period}</p>
+                <p className="text-xs md:text-sm text-muted-foreground whitespace-nowrap">{exp.period}</p>
               </div>
-              <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{exp.description}</p>
             </div>
           ))}
         </div>

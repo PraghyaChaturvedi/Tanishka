@@ -15,8 +15,35 @@ interface PortfolioCategoryProps {
     description: string
     images: string[]
     singleColumn?: boolean
-    typographyLayout?: boolean // ← new flag for "Type That Talks"
+    typographyLayout?: boolean
   }
+}
+
+// ── Helper: detect if a path is a video ───────────────────────────────────
+const isVideo = (src: string) => src.toLowerCase().endsWith(".mp4")
+
+// ── Renders either a video or image depending on file type ───────────────
+function MediaItem({
+  src,
+  alt,
+  className,
+}: {
+  src: string
+  alt: string
+  className?: string
+}) {
+  if (isVideo(src)) {
+    return (
+      <video
+        src={src}
+        className={className}
+        controls
+        playsInline
+        preload="metadata"
+      />
+    )
+  }
+  return <img src={src || "/placeholder.svg"} alt={alt} className={className} />
 }
 
 export function PortfolioCategory({ category }: PortfolioCategoryProps) {
@@ -66,11 +93,7 @@ export function PortfolioCategory({ category }: PortfolioCategoryProps) {
     touchStartX.current = null
   }
 
-  // ── Typography image groups ─────────────────────────────────────────────
-  // images[0]   → cover
-  // images[1-4] → 2.jpg, 1.jpg, tannu typooo final-02, -03
-  // images[5-12]→ typography letters-01 to -08
-  // images[13+] → typography word (2)-01 to -03
+  // Typography groups
   const groupA = category.images.slice(1, 5)
   const groupB = category.images.slice(5, 13)
   const groupC = category.images.slice(13)
@@ -83,11 +106,24 @@ export function PortfolioCategory({ category }: PortfolioCategoryProps) {
         className="bg-card border border-border rounded-lg overflow-hidden transition-all duration-300 w-full text-left flex flex-col h-[420px] break-inside-avoid"
       >
         <div className="flex-1 bg-muted flex items-center justify-center overflow-hidden">
-          <img
-            src={coverImage || "/placeholder.svg"}
-            alt={category.title}
-            className="max-w-full max-h-full object-contain"
-          />
+          {/* Card cover — video shows as muted autoplay preview, image shows normally */}
+          {isVideo(coverImage) ? (
+            <video
+              src={coverImage}
+              className="max-w-full max-h-full object-contain"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+            />
+          ) : (
+            <img
+              src={coverImage || "/placeholder.svg"}
+              alt={category.title}
+              className="max-w-full max-h-full object-contain"
+            />
+          )}
         </div>
         <div className="h-[120px] p-5 flex flex-col justify-center border-t border-border">
           <h3 className="text-lg font-serif font-semibold leading-tight mb-1">
@@ -112,123 +148,72 @@ export function PortfolioCategory({ category }: PortfolioCategoryProps) {
           <div className="mt-6 space-y-4">
             {category.typographyLayout ? (
               // ══════════════════════════════════════════════════════════
-              //  TYPOGRAPHY LAYOUT — "Type That Talks"
+              //  TYPOGRAPHY LAYOUT
               // ══════════════════════════════════════════════════════════
               <div className="flex flex-col gap-6">
-
-                {/* COVER */}
                 <button
                   onClick={() => openImage(0)}
                   className="bg-muted rounded-lg overflow-hidden focus:outline-none w-full"
                 >
-                  <img
-                    src={coverImage || "/placeholder.svg"}
+                  <MediaItem
+                    src={coverImage}
                     alt={`${category.title} cover`}
                     className="w-full h-auto object-contain"
                   />
                 </button>
 
-                {/* ── TEXT BLOCK 1 — after cover ── */}
                 <div className="px-2 py-4 border-l-4 border-border space-y-2">
-                  <h4 className="text-xl font-serif font-semibold">
-                    
-                    OBJECT IN TYPE
-                  </h4>
+                  <h4 className="text-xl font-serif font-semibold">OBJECT IN TYPE</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     The work below explores typography as form rather than text. The object and the word merge into a single visual idea, where meaning is communicated through structure and shape. The focus is on concept, perception, and visual logic.
                   </p>
                 </div>
 
-                {/* GROUP A — 4 images in 2×2 grid */}
                 <div className="grid grid-cols-2 gap-4">
                   {groupA.map((image, index) => (
-                    <button
-                      key={index}
-                      onClick={() => openImage(index + 1)}
-                      className="bg-muted rounded-lg overflow-hidden focus:outline-none"
-                    >
-                      <img
-                        src={image || "/placeholder.svg"}
-                        alt={`${category.title} ${index + 2}`}
-                        className="w-full h-auto object-contain"
-                      />
+                    <button key={index} onClick={() => openImage(index + 1)} className="bg-muted rounded-lg overflow-hidden focus:outline-none">
+                      <MediaItem src={image} alt={`${category.title} ${index + 2}`} className="w-full h-auto object-contain" />
                     </button>
                   ))}
                 </div>
 
-                {/* ── TEXT BLOCK 2 — section label before letters ── */}
-                <div className="px-2 pt-2">
-                  <h4 className="text-xl font-serif font-semibold">
-                    ONE LETTER, ONE THOUGHT
-                  </h4>
+                <div className="px-2 py-4 border-l-4 border-border space-y-2">
+                  <h4 className="text-xl font-serif font-semibold">ONE LETTER, ONE THOUGHT</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    This exercise explores how a single letter can embody the meaning of a word that begins with it. The letterform becomes a visual metaphor, expressing the concept through form and structure. The focus is on idea, association, and clarity rather than decoration.
+                    This exercise explores how a single letter can embody the meaning of a word that begins with it. The letterform becomes a visual metaphor, expressing the concept through form and structure.
                   </p>
                 </div>
 
-                {/* GROUP B — letters-01 to -08 */}
                 <div className="grid grid-cols-2 gap-4">
                   {groupB.map((image, index) => (
-                    <button
-                      key={index}
-                      onClick={() => openImage(index + 5)}
-                      className="bg-muted rounded-lg overflow-hidden focus:outline-none"
-                    >
-                      <img
-                        src={image || "/placeholder.svg"}
-                        alt={`Typography letter ${index + 1}`}
-                        className="w-full h-auto object-contain"
-                      />
+                    <button key={index} onClick={() => openImage(index + 5)} className="bg-muted rounded-lg overflow-hidden focus:outline-none">
+                      <MediaItem src={image} alt={`Typography letter ${index + 1}`} className="w-full h-auto object-contain" />
                     </button>
                   ))}
                 </div>
 
-                {/* ── TEXT BLOCK 3 — paragraph before word section ── */}
-                <div className="px-4 py-5 rounded-lg bg-muted/40 space-y-2">
-                  <h4 className="text-lg font-serif font-semibold">
-                  
-                    LETTERS THAT REVEALS
-                  </h4>
+                <div className="px-2 py-4 border-l-4 border-border space-y-2">
+                  <h4 className="text-lg font-serif font-semibold">LETTERS THAT REVEALS</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    {/* ✏️ EDIT WORD SECTION PARAGRAPH */}
-                    This exercise investigates how meaning can emerge from within a word itself. Selected letters are transformed into visual cues that represent the word’s concept. The focus is on subtlety, perception, and the balance between readability and image.
+                    This exercise investigates how meaning can emerge from within a word itself. Selected letters are transformed into visual cues that represent the word's concept.
                   </p>
                 </div>
 
-                {/* GROUP C — word (2)-01 to -03 */}
                 <div className="grid grid-cols-2 gap-4">
                   {groupC.map((image, index) => (
-                    <button
-                      key={index}
-                      onClick={() => openImage(index + 13)}
-                      className="bg-muted rounded-lg overflow-hidden focus:outline-none"
-                    >
-                      <img
-                        src={image || "/placeholder.svg"}
-                        alt={`Typography word ${index + 1}`}
-                        className="w-full h-auto object-contain"
-                      />
+                    <button key={index} onClick={() => openImage(index + 13)} className="bg-muted rounded-lg overflow-hidden focus:outline-none">
+                      <MediaItem src={image} alt={`Typography word ${index + 1}`} className="w-full h-auto object-contain" />
                     </button>
                   ))}
                 </div>
-
               </div>
-              // ══════════════════════════════════════════════════════════
 
             ) : category.singleColumn ? (
               // ── SINGLE COLUMN LAYOUT ──
               <div className="flex flex-col items-center gap-4">
                 {category.images.map((image, index) => (
-                  <button
-                    key={index}
-                    onClick={() => openImage(index)}
-                    className="bg-muted rounded-lg overflow-hidden focus:outline-none w-full max-w-2xl"
-                  >
-                    <img
-                      src={image || "/placeholder.svg"}
-                      alt={`${category.title} ${index + 1}`}
-                      className="w-full h-auto object-contain"
-                    />
+                  <button key={index} onClick={() => openImage(index)} className="bg-muted rounded-lg overflow-hidden focus:outline-none w-full max-w-2xl">
+                    <MediaItem src={image} alt={`${category.title} ${index + 1}`} className="w-full h-auto object-contain" />
                   </button>
                 ))}
               </div>
@@ -237,30 +222,15 @@ export function PortfolioCategory({ category }: PortfolioCategoryProps) {
               // ── DEFAULT 2-COLUMN LAYOUT ──
               <>
                 <div className="flex justify-center">
-                  <button
-                    onClick={() => openImage(0)}
-                    className="bg-muted rounded-lg overflow-hidden focus:outline-none max-w-md w-full"
-                  >
-                    <img
-                      src={coverImage || "/placeholder.svg"}
-                      alt={`${category.title} cover`}
-                      className="w-full h-auto object-contain"
-                    />
+                  <button onClick={() => openImage(0)} className="bg-muted rounded-lg overflow-hidden focus:outline-none max-w-md w-full">
+                    <MediaItem src={coverImage} alt={`${category.title} cover`} className="w-full h-auto object-contain" />
                   </button>
                 </div>
                 {restImages.length > 0 && (
                   <div className="grid grid-cols-2 gap-4">
                     {restImages.map((image, index) => (
-                      <button
-                        key={index}
-                        onClick={() => openImage(index + 1)}
-                        className="bg-muted rounded-lg overflow-hidden focus:outline-none"
-                      >
-                        <img
-                          src={image || "/placeholder.svg"}
-                          alt={`${category.title} ${index + 2}`}
-                          className="w-full h-auto object-contain"
-                        />
+                      <button key={index} onClick={() => openImage(index + 1)} className="bg-muted rounded-lg overflow-hidden focus:outline-none">
+                        <MediaItem src={image} alt={`${category.title} ${index + 2}`} className="w-full h-auto object-contain" />
                       </button>
                     ))}
                   </div>
@@ -271,7 +241,7 @@ export function PortfolioCategory({ category }: PortfolioCategoryProps) {
         </DialogContent>
       </Dialog>
 
-      {/* ================= FULLSCREEN IMAGE OVERLAY ================= */}
+      {/* ================= FULLSCREEN OVERLAY ================= */}
       {activeIndex !== null && (
         <div
           className="fixed inset-0 z-[9999] bg-black flex items-center justify-center"
@@ -280,33 +250,33 @@ export function PortfolioCategory({ category }: PortfolioCategoryProps) {
           onTouchEnd={handleTouchEnd}
           tabIndex={0}
         >
-          <button
-            onClick={closeImage}
-            className="absolute top-4 right-4 z-10 p-2 text-white focus:outline-none"
-            aria-label="Close"
-          >
+          <button onClick={closeImage} className="absolute top-4 right-4 z-10 p-2 text-white focus:outline-none" aria-label="Close">
             <X size={32} />
           </button>
 
-          <button
-            onClick={goPrev}
-            className="absolute left-4 z-10 p-2 text-white focus:outline-none"
-            aria-label="Previous image"
-          >
+          <button onClick={goPrev} className="absolute left-4 z-10 p-2 text-white focus:outline-none" aria-label="Previous">
             <ChevronLeft className="w-7 h-7 md:w-12 md:h-12" />
           </button>
 
-          <img
-            src={category.images[activeIndex]}
-            alt={`Artwork ${activeIndex + 1}`}
-            className="w-[90vw] h-[90vh] object-contain"
-          />
+          {/* Fullscreen: video gets controls, image fills screen */}
+          {isVideo(category.images[activeIndex]) ? (
+            <video
+              key={category.images[activeIndex]} // re-mount on src change
+              src={category.images[activeIndex]}
+              className="w-[90vw] h-[90vh] object-contain"
+              controls
+              autoPlay
+              playsInline
+            />
+          ) : (
+            <img
+              src={category.images[activeIndex]}
+              alt={`Artwork ${activeIndex + 1}`}
+              className="w-[90vw] h-[90vh] object-contain"
+            />
+          )}
 
-          <button
-            onClick={goNext}
-            className="absolute right-4 z-10 p-2 text-white focus:outline-none"
-            aria-label="Next image"
-          >
+          <button onClick={goNext} className="absolute right-4 z-10 p-2 text-white focus:outline-none" aria-label="Next">
             <ChevronRight className="w-7 h-7 md:w-12 md:h-12" />
           </button>
 

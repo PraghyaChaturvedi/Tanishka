@@ -5,8 +5,8 @@ export function Contact() {
     <section id="contact" className="py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl font-serif font-bold mb-6">Let's Create Together</h2>
-          <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">Let's Create Together</h2>
+          <p className="text-base md:text-xl text-muted-foreground mb-12 leading-relaxed">
             I'm always excited to collaborate on creative projects, discuss design opportunities, or simply connect with
             fellow artists and professionals.
           </p>
@@ -16,7 +16,7 @@ export function Contact() {
               <p className="text-sm font-medium">Email</p>
               <a
                 href="mailto:tanishka.aga03@gmail.com"
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm break-all"
+                className="text-muted-foreground hover:text-foreground transition-colors text-xs md:text-sm break-all"
               >
                 tanishka.aga03@gmail.com
               </a>
@@ -24,7 +24,7 @@ export function Contact() {
             <div className="flex flex-col items-center gap-3 p-6 bg-muted rounded-lg">
               <Phone className="w-6 h-6 text-accent" />
               <p className="text-sm font-medium">Phone</p>
-              <a href="tel:7046800219" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="tel:7046800219" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                 +91 7046800219
               </a>
             </div>
@@ -35,7 +35,7 @@ export function Contact() {
                 href="https://www.instagram.com/tanishkaartwork.03?igsh=YjY0b2NudWV2NGdr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                className="text-muted-foreground hover:text-foreground transition-colors text-xs md:text-sm"
               >
                 @tanishkaartwork.03
               </a>
@@ -43,7 +43,7 @@ export function Contact() {
           </div>
         </div>
       </div>
-      <footer className="mt-24 pt-8 border-t border-border text-center text-sm text-muted-foreground">
+      <footer className="mt-24 pt-8 border-t border-border text-center text-xs md:text-sm text-muted-foreground">
         <p>© 2025 Tanishka Agarwal. All rights reserved.</p>
       </footer>
     </section>

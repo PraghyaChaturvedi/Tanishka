@@ -99,7 +99,7 @@ const portfolioCategories = [
   {
     title: "Brand Marks Study",
     description: "Logo designing and logo book",
-    images: [ "/logo/cover.jpg","/logo/Untitled-1-01.jpg", "/logo/Untitled-1-02.jpg", "/logo/Untitled-1-03.jpg"
+    images: [ "/logo/cover.jpg", "/logo/Untitled-1-02.jpg", "/logo/Untitled-1-03.jpg"
       , "/logo/Untitled-1-04.jpg", "/logo/Untitled-1-05.jpg", "/logo/Untitled-1-06.jpg",
       "/logo/Untitled-1-07.jpg", "/logo/Untitled-1-08.jpg", "/logo/Untitled-1-09.jpg", "/logo/Untitled-1-10.jpg",
     ],

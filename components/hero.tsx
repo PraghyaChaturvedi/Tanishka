@@ -13,17 +13,17 @@ export function Hero() {
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 fade-in-up">
-            <p className="text-muted-foreground text-sm tracking-[0.2em] uppercase pl-3">
+            <p className="text-muted-foreground text-xs md:text-sm tracking-[0.2em] uppercase pl-3">
               Fine Arts & Design
             </p>
 
             <h1
-              className={`${outfit.className} text-5xl md:text-7xl  tracking-tight leading-tight`}
+              className={`${outfit.className} text-4xl md:text-7xl tracking-tight leading-tight`}
             >
               Tanishka Agarwal
             </h1>
 
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
+            <p className="text-base md:text-xl text-muted-foreground leading-relaxed max-w-lg">
               Fine Arts student specializing in multidisciplinary design, branding, and visual storytelling
             </p>
 
