@@ -16,13 +16,12 @@ interface PortfolioCategoryProps {
     images: string[]
     singleColumn?: boolean
     typographyLayout?: boolean
+    pixelsLayout?: boolean // ← new flag for "Pixels and Imaginations"
   }
 }
 
-// ── Helper: detect if a path is a video ───────────────────────────────────
-const isVideo = (src: string) => src.toLowerCase().endsWith(".mp4")
+const isVideo = (src: string) => !!src && src.toLowerCase().endsWith(".mp4")
 
-// ── Renders either a video or image depending on file type ───────────────
 function MediaItem({
   src,
   alt,
@@ -98,6 +97,13 @@ export function PortfolioCategory({ category }: PortfolioCategoryProps) {
   const groupB = category.images.slice(5, 13)
   const groupC = category.images.slice(13)
 
+  // Pixels layout groups
+  const pixelsCover   = category.images[0]  // rain dance.jpg
+  const pixelsDoodle1 = category.images[1]  // doodle 1_page-0001.jpg
+  const pixelsDoodle  = category.images[2]  // doodle.jpg
+  const pixelsAnimal  = category.images[3]  // animal.jpg
+  const pixelsProcess = category.images[4]  // process.jpg
+
   return (
     <>
       {/* ================= CARD ================= */}
@@ -106,7 +112,6 @@ export function PortfolioCategory({ category }: PortfolioCategoryProps) {
         className="bg-card border border-border rounded-lg overflow-hidden transition-all duration-300 w-full text-left flex flex-col h-[420px] break-inside-avoid"
       >
         <div className="flex-1 bg-muted flex items-center justify-center overflow-hidden">
-          {/* Card cover — video shows as muted autoplay preview, image shows normally */}
           {isVideo(coverImage) ? (
             <video
               src={coverImage}
@@ -146,7 +151,92 @@ export function PortfolioCategory({ category }: PortfolioCategoryProps) {
           </DialogHeader>
 
           <div className="mt-6 space-y-4">
-            {category.typographyLayout ? (
+            {category.pixelsLayout ? (
+              // ══════════════════════════════════════════════════════════
+              //  PIXELS LAYOUT — "Pixels and Imaginations"
+              // ══════════════════════════════════════════════════════════
+              <div className="flex flex-col gap-6">
+
+                {/* COVER — rain dance.jpg */}
+                <button
+                  onClick={() => openImage(0)}
+                  className="bg-muted rounded-lg overflow-hidden focus:outline-none w-full"
+                >
+                  <MediaItem
+                    src={pixelsCover}
+                    alt={`${category.title} cover`}
+                    className="w-full h-auto object-contain"
+                  />
+                </button>
+
+                {/* ── TEXT BLOCK 1 — after cover ── */}
+                <div className="px-2 py-4 border-l-4 border-border space-y-1">
+                  <h4 className="text-xl font-serif font-semibold">
+                    Playful Branding: A Doodle Advertisement
+                  </h4>
+                </div>
+
+                {/* doodle 1 + doodle.jpg — 2 columns */}
+                <div className="grid grid-cols-2 gap-4">
+                  <button
+                    onClick={() => openImage(1)}
+                    className="bg-muted rounded-lg overflow-hidden focus:outline-none"
+                  >
+                    <MediaItem
+                      src={pixelsDoodle1}
+                      alt="Doodle advertisement 1"
+                      className="w-full h-auto object-contain"
+                    />
+                  </button>
+                  <button
+                    onClick={() => openImage(2)}
+                    className="bg-muted rounded-lg overflow-hidden focus:outline-none"
+                  >
+                    <MediaItem
+                      src={pixelsDoodle}
+                      alt="Doodle advertisement 2"
+                      className="w-full h-auto object-contain"
+                    />
+                  </button>
+                </div>
+
+                {/* ── TEXT BLOCK 2 — before animal.jpg ── */}
+                <div className="px-2 py-4 border-l-4 border-border space-y-1">
+                  <h4 className="text-xl font-serif font-semibold">
+                    Character Merge: Human Meets Animal
+                  </h4>
+                </div>
+
+                {/* animal.jpg + process.jpg — 2 columns */}
+                <div className="grid grid-cols-2 gap-4">
+                  <button
+                    onClick={() => openImage(3)}
+                    className="bg-muted rounded-lg overflow-hidden focus:outline-none"
+                  >
+                    <MediaItem
+                      src={pixelsAnimal}
+                      alt="Character merge human meets animal"
+                      className="w-full h-auto object-contain"
+                    />
+                  </button>
+                  {pixelsProcess && (
+                    <button
+                      onClick={() => openImage(4)}
+                      className="bg-muted rounded-lg overflow-hidden focus:outline-none"
+                    >
+                      <MediaItem
+                        src={pixelsProcess}
+                        alt="Process illustration"
+                        className="w-full h-auto object-contain"
+                      />
+                    </button>
+                  )}
+                </div>
+
+              </div>
+              // ══════════════════════════════════════════════════════════
+
+            ) : category.typographyLayout ? (
               // ══════════════════════════════════════════════════════════
               //  TYPOGRAPHY LAYOUT
               // ══════════════════════════════════════════════════════════
@@ -258,10 +348,9 @@ export function PortfolioCategory({ category }: PortfolioCategoryProps) {
             <ChevronLeft className="w-7 h-7 md:w-12 md:h-12" />
           </button>
 
-          {/* Fullscreen: video gets controls, image fills screen */}
           {isVideo(category.images[activeIndex]) ? (
             <video
-              key={category.images[activeIndex]} // re-mount on src change
+              key={category.images[activeIndex]}
               src={category.images[activeIndex]}
               className="w-[90vw] h-[90vh] object-contain"
               controls

@@ -88,11 +88,13 @@ const portfolioCategories = [
   {
     title: "Pixels and Imaginations",
     description: "Digital illustrations",
+    pixelsLayout: true,
     images: [
-      "illustrations/rain dance.jpg",
-      "/mythological-illustration-storybook.jpg",
-      "/illustrated-mythology.jpg",
-      "/storybook-illustration-art.jpg",
+      "/illustrations/rain dance.jpg",
+      "/illustrations/doodle 1_page-0001.jpg",
+      "/illustrations/doodle.jpg",
+      "/illustrations/animal.jpg",
+      "/illustrations/process.jpg"
     ],
   },
   
