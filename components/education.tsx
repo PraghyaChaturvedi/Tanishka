@@ -16,7 +16,7 @@ export function Education() {
             <p className="text-muted-foreground">IMAGE Institute, Surat</p>
           </div>
           <div className="border-l-2 border-accent pl-6 space-y-2">
-            <p className="text-sm text-muted-foreground">2021 - 2023</p>
+            <p className="text-sm text-muted-foreground">2022 - 2023</p>
             <h3 className="text-2xl font-serif font-semibold">Higher Secondary (12th Grade)</h3>
             <p className="text-muted-foreground">Agarwal Vidya Vihar School, Surat • CBSE Board</p>
             <p className="font-medium text-accent">90.4%</p>
