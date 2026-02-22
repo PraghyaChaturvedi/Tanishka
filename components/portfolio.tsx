@@ -24,6 +24,7 @@ const portfolioCategories = [
     title: "Make Them Look",
     description: "Poster designing",
     images: [
+      "/poster/makethemCover.jpg",
       "/poster/fireless cooking poster design.jpg",
       "/poster/farewell invite 1-Recovered.jpg",
       "/poster/ganesh chaturthi invite.jpg",
@@ -98,7 +99,7 @@ const portfolioCategories = [
   {
     title: "Brand Marks Study",
     description: "Logo designing and logo book",
-    images: ["/logo/Untitled-1-01.jpg", "/logo/Untitled-1-02.jpg", "/logo/Untitled-1-03.jpg"
+    images: [ "/logo/cover.jpg","/logo/Untitled-1-01.jpg", "/logo/Untitled-1-02.jpg", "/logo/Untitled-1-03.jpg"
       , "/logo/Untitled-1-04.jpg", "/logo/Untitled-1-05.jpg", "/logo/Untitled-1-06.jpg",
       "/logo/Untitled-1-07.jpg", "/logo/Untitled-1-08.jpg", "/logo/Untitled-1-09.jpg", "/logo/Untitled-1-10.jpg",
     ],
@@ -147,14 +148,14 @@ const portfolioCategories = [
   {
     title: "Visual Rhythm",
     description: "Stop motion",
-    images: ["/stop-motion-animation-frame.jpg", "/stop-motion-art-project.jpg", "/animated-stop-motion-scene.jpg"],
+    images: ["/stopMotion/sm6.mp4",
+"/stopMotion/WhatsApp Video 2026-02-22 at 9.21.35 PM.mp4",
+"/stopMotion/WhatsApp Video 2026-02-22 at 9.25.23 PM.mp4",
+"/stopMotion/WhatsApp Video 2026-02-22 at 9.30.47 PM.mp4",
+"/stopMotion/WhatsApp Video 2026-02-22 at 9.45.56 PM.mp4",
+"/stopMotion/WhatsApp Video 2026-02-22 at 9.50.52 PM.mp4"],
   },
 
-  {
-    title: "Miniature Mastery",
-    description: "Pencil Carving Art",
-    images: ["/stop-motion-animation-frame.jpg", "/stop-motion-art-project.jpg", "/animated-stop-motion-scene.jpg"],
-  },
 ]
 
 export function Portfolio() {

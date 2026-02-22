@@ -158,10 +158,12 @@ export function PortfolioCategory({ category }: PortfolioCategoryProps) {
 
                 {/* ── TEXT BLOCK 2 — section label before letters ── */}
                 <div className="px-2 pt-2">
-                  <h4 className="text-xl font-serif font-semibold tracking-widest uppercase">
-                    {/* ✏️ EDIT SECTION LABEL — you said you'll send this text later */}
-                    T · Type
+                  <h4 className="text-xl font-serif font-semibold">
+                    ONE LETTER, ONE THOUGHT
                   </h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    This exercise explores how a single letter can embody the meaning of a word that begins with it. The letterform becomes a visual metaphor, expressing the concept through form and structure. The focus is on idea, association, and clarity rather than decoration.
+                  </p>
                 </div>
 
                 {/* GROUP B — letters-01 to -08 */}
@@ -184,15 +186,12 @@ export function PortfolioCategory({ category }: PortfolioCategoryProps) {
                 {/* ── TEXT BLOCK 3 — paragraph before word section ── */}
                 <div className="px-4 py-5 rounded-lg bg-muted/40 space-y-2">
                   <h4 className="text-lg font-serif font-semibold">
-                    {/* ✏️ EDIT WORD SECTION HEADING */}
-                    Words as Design
+                  
+                    LETTERS THAT REVEALS
                   </h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {/* ✏️ EDIT WORD SECTION PARAGRAPH */}
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                    irure dolor in reprehenderit in voluptate velit esse cillum
-                    dolore eu fugiat nulla pariatur.
+                    This exercise investigates how meaning can emerge from within a word itself. Selected letters are transformed into visual cues that represent the word’s concept. The focus is on subtlety, perception, and the balance between readability and image.
                   </p>
                 </div>
 
