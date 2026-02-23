@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "Tanishka Agarwal - Fine Arts Portfolio",
   description:
     "Portfolio of Tanishka Agarwal, a multidisciplinary fine arts and design student specializing in branding, digital illustration, sculpture, printmaking, and visual storytelling.",
-  generator: "v0.app",
+  
   icons: {
     icon: [
       {

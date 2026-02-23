@@ -36,7 +36,7 @@ export function Hero() {
 
           <div className="relative aspect-[3/4] bg-muted rounded-lg overflow-hidden scale-in">
             <img
-              src="/professional-portrait-of-young-female-artist-in-el.jpg"
+              src="/me.png"
               alt="Tanishka Agarwal"
               className="object-cover w-full h-full"
             />

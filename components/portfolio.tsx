@@ -16,7 +16,7 @@ const portfolioCategories = [
 "/reBranding/portfolio work-08.jpg",
 "/reBranding/portfolio work-09.jpg",
 "/reBranding/portfolio work-10.jpg",
-"/reBranding/portfolio work-11.jpg",
+"/reBranding/portfolio work-11.jpeg",
     ],
   },
 
@@ -57,7 +57,7 @@ const portfolioCategories = [
 
    {
     title: "Designed to Communicate",
-    description: "Magzine covers, Ads, Brochure",
+    description: "Magzine covers And Ads",
     images: [
       "/magzine/zudio ad.jpg",
       "/magzine/carasouel ad.jpg",

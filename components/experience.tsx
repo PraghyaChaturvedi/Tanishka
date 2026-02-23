@@ -15,11 +15,11 @@ export function Experience() {
         "Completed a one-month internship at Provyz Co-working space, gaining professional experience in collaborative work environments.",
     },
     {
-      title: "Jewelry Photoshoot Assistant",
+      title: "Jewellery Photoshoot Assistant",
       type: "Freelance",
       period: "2023 - Present",
       description:
-        "Assisted in jewelry photoshoots with responsibilities including model preparation and coordination, gaining hands-on experience in professional photography production.",
+        "Assisted in jewellery photoshoots with responsibilities including model preparation and coordination, gaining hands-on experience in professional photography production.",
     },
     {
       title: "Digital Work Management",
