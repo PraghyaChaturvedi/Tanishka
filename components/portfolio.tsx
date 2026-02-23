@@ -145,32 +145,44 @@ const portfolioCategories = [
     description:
       "Sketching, live sketches, still life, perspective, portrait, compositions",
     images: [
-      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.46 AM (2).jpeg",
-      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.47 AM (1).jpeg",
-      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.47 AM (2).jpeg",
-      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.47 AM.jpeg",
-      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.48 AM.jpeg",
-      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.49 AM (1).jpeg",
-      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.49 AM (2).jpeg",
-      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.49 AM.jpeg",
-      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.55 AM (1).jpeg",
-      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.57 AM (1).jpeg",
-      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.57 AM.jpeg",
       "/Lines That Speak/IMG_20260223_083735.jpg.jpeg",
-      "/Lines That Speak/IMG_20260223_083812.jpg.jpeg",
+      "/Lines That Speak/Scanned Document 6_260223_114042_2.jpg.jpeg",
+      "/Lines That Speak/IMG20260223084021.jpg.jpeg",
       "/Lines That Speak/IMG_20260223_084056.jpg.jpeg",
+      "/Lines That Speak/IMG20260223084128.jpg.jpeg",
+      "/Lines That Speak/Scanned Document 6_260223_114042_4.jpg.jpeg",
+      "/Lines That Speak/Scanned Document 6_260223_114042_3.jpg.jpeg",
+      "/Lines That Speak/IMG_20260223_083812.jpg.jpeg",
       "/Lines That Speak/IMG_20260223_084122.jpg.jpeg",
       "/Lines That Speak/IMG20260223083627.jpg.jpeg",
       "/Lines That Speak/IMG20260223083645.jpg.jpeg",
       "/Lines That Speak/IMG20260223083842.jpg.jpeg",
       "/Lines That Speak/IMG20260223083856.jpg.jpeg",
       "/Lines That Speak/IMG20260223084009.jpg.jpeg",
-      "/Lines That Speak/IMG20260223084021.jpg.jpeg",
-      "/Lines That Speak/IMG20260223084128.jpg.jpeg",
       "/Lines That Speak/Scanned Document 6_260223_114042_1.jpg.jpeg",
-      "/Lines That Speak/Scanned Document 6_260223_114042_2.jpg.jpeg",
-      "/Lines That Speak/Scanned Document 6_260223_114042_3.jpg.jpeg",
-      "/Lines That Speak/Scanned Document 6_260223_114042_4.jpg.jpeg",
+      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.57 AM.jpeg",
+      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.57 AM (1).jpeg",
+      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.55 AM (1).jpeg",
+      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.49 AM.jpeg",
+      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.48 AM.jpeg",
+
+      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.46 AM (2).jpeg",
+      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.47 AM (1).jpeg",
+      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.47 AM (2).jpeg",
+      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.47 AM.jpeg",
+      
+      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.49 AM (1).jpeg",
+      "/Lines That Speak/WhatsApp Image 2025-12-13 at 11.20.49 AM (2).jpeg",
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
     ],
   },
 
